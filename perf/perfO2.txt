@@ -1,0 +1,179 @@
+clang++  -Wall -Wextra -pedantic -Wno-gnu-anonymous-struct -Wno-gnu-case-range -Wno-nested-anon-types -O2 -std=gnu++20 -fopenmp=libomp -D_CRT_SECURE_NO_WARNINGS  -MMD -c Utils.cpp -o build/Utils.o
+clang++  -Wall -Wextra -pedantic -Wno-gnu-anonymous-struct -Wno-gnu-case-range -Wno-nested-anon-types -O2 -std=gnu++20 -fopenmp=libomp -D_CRT_SECURE_NO_WARNINGS  -MMD -c ByteStream.cpp -o build/ByteStream.o
+clang++  -Wall -Wextra -pedantic -Wno-gnu-anonymous-struct -Wno-gnu-case-range -Wno-nested-anon-types -O2 -std=gnu++20 -fopenmp=libomp -D_CRT_SECURE_NO_WARNINGS  -MMD -c HuffmanStream.cpp -o build/HuffmanStream.o
+clang++  -Wall -Wextra -pedantic -Wno-gnu-anonymous-struct -Wno-gnu-case-range -Wno-nested-anon-types -O2 -std=gnu++20 -fopenmp=libomp -D_CRT_SECURE_NO_WARNINGS  -MMD -c JPEGDecoder.cpp -o build/JPEGDecoder.o
+clang++  -Wall -Wextra -pedantic -Wno-gnu-anonymous-struct -Wno-gnu-case-range -Wno-nested-anon-types -O2 -std=gnu++20 -fopenmp=libomp -D_CRT_SECURE_NO_WARNINGS  -MMD -c PPMEncoder.cpp -o build/PPMEncoder.o
+clang++  -Wall -Wextra -pedantic -Wno-gnu-anonymous-struct -Wno-gnu-case-range -Wno-nested-anon-types -O2 -std=gnu++20 -fopenmp=libomp -D_CRT_SECURE_NO_WARNINGS  -MMD -c main.cpp -o build/main.o
+clang++  build/Utils.o build/ByteStream.o build/HuffmanStream.o build/JPEGDecoder.o build/PPMEncoder.o build/main.o -fopenmp=libomp -Wall -Wextra -pedantic -Wno-gnu-anonymous-struct -Wno-gnu-case-range -Wno-nested-anon-types -O2 -std=gnu++20 -o jpg2ppm.exe
+samples/sample0.jpg
+    [SOS-timer] algo: reference
+    [SOS-timer] Loading Huffman Stream:      0 ms
+    [SOS-timer] Decoding Huffman Stream:     0 ms
+    [SOS-timer] Dequantize And Perform IDCT: 51 ms
+    [SOS-timer] Convert YCbCr to RGB:        0 ms
+    [SOS-timer] Construct RGB image:         0 ms
+    [SOS-timer] Total time:                  51 ms
+    [SOS-timer] algo: compound
+    [SOS-timer] Loading Huffman Stream:      0 ms
+    [SOS-timer] Decoding Huffman Stream:     0 ms
+    [SOS-timer] Dequantize And Perform IDCT: 14 ms
+    [SOS-timer] Convert YCbCr to RGB:        0 ms
+    [SOS-timer] Construct RGB image:         4 ms
+    [SOS-timer] Total time:                  18 ms
+    [SOS-timer] algo: walsh
+    [SOS-timer] Loading Huffman Stream:      0 ms
+    [SOS-timer] Decoding Huffman Stream:     1 ms
+    [SOS-timer] Dequantize And Perform IDCT: 4 ms
+    [SOS-timer] Convert YCbCr to RGB:        0 ms
+    [SOS-timer] Construct RGB image:         2 ms
+    [SOS-timer] Total time:                  7 ms
+    [SOS-timer] algo: reference-lut
+    [SOS-timer] Loading Huffman Stream:      0 ms
+    [SOS-timer] Decoding Huffman Stream:     1 ms
+    [SOS-timer] Dequantize And Perform IDCT: 3 ms
+    [SOS-timer] Convert YCbCr to RGB:        0 ms
+    [SOS-timer] Construct RGB image:         0 ms
+    [SOS-timer] Total time:                  4 ms
+    [SOS-timer] algo: compound-lut
+    [SOS-timer] Loading Huffman Stream:      0 ms
+    [SOS-timer] Decoding Huffman Stream:     1 ms
+    [SOS-timer] Dequantize And Perform IDCT: 6 ms
+    [SOS-timer] Convert YCbCr to RGB:        0 ms
+    [SOS-timer] Construct RGB image:         2 ms
+    [SOS-timer] Total time:                  9 ms
+    [SOS-timer] algo: arai
+    [SOS-timer] Loading Huffman Stream:      0 ms
+    [SOS-timer] Decoding Huffman Stream:     1 ms
+    [SOS-timer] Dequantize And Perform IDCT: 2 ms
+    [SOS-timer] Convert YCbCr to RGB:        0 ms
+    [SOS-timer] Construct RGB image:         1 ms
+    [SOS-timer] Total time:                  4 ms
+samples/sample1.jpg
+    [SOS-timer] algo: reference
+    [SOS-timer] Loading Huffman Stream:      2 ms
+    [SOS-timer] Decoding Huffman Stream:     36 ms
+    [SOS-timer] Dequantize And Perform IDCT: 1268 ms
+    [SOS-timer] Convert YCbCr to RGB:        7 ms
+    [SOS-timer] Construct RGB image:         20 ms
+    [SOS-timer] Total time:                  1333 ms
+    [SOS-timer] algo: compound
+    [SOS-timer] Loading Huffman Stream:      2 ms
+    [SOS-timer] Decoding Huffman Stream:     36 ms
+    [SOS-timer] Dequantize And Perform IDCT: 187 ms
+    [SOS-timer] Convert YCbCr to RGB:        11 ms
+    [SOS-timer] Construct RGB image:         21 ms
+    [SOS-timer] Total time:                  257 ms
+    [SOS-timer] algo: walsh
+    [SOS-timer] Loading Huffman Stream:      1 ms
+    [SOS-timer] Decoding Huffman Stream:     34 ms
+    [SOS-timer] Dequantize And Perform IDCT: 90 ms
+    [SOS-timer] Convert YCbCr to RGB:        13 ms
+    [SOS-timer] Construct RGB image:         23 ms
+    [SOS-timer] Total time:                  161 ms
+    [SOS-timer] algo: reference-lut
+    [SOS-timer] Loading Huffman Stream:      2 ms
+    [SOS-timer] Decoding Huffman Stream:     37 ms
+    [SOS-timer] Dequantize And Perform IDCT: 9 ms
+    [SOS-timer] Convert YCbCr to RGB:        11 ms
+    [SOS-timer] Construct RGB image:         19 ms
+    [SOS-timer] Total time:                  78 ms
+    [SOS-timer] algo: compound-lut
+    [SOS-timer] Loading Huffman Stream:      2 ms
+    [SOS-timer] Decoding Huffman Stream:     35 ms
+    [SOS-timer] Dequantize And Perform IDCT: 5 ms
+    [SOS-timer] Convert YCbCr to RGB:        6 ms
+    [SOS-timer] Construct RGB image:         16 ms
+    [SOS-timer] Total time:                  64 ms
+    [SOS-timer] algo: arai
+    [SOS-timer] Loading Huffman Stream:      1 ms
+    [SOS-timer] Decoding Huffman Stream:     34 ms
+    [SOS-timer] Dequantize And Perform IDCT: 5 ms
+    [SOS-timer] Convert YCbCr to RGB:        7 ms
+    [SOS-timer] Construct RGB image:         17 ms
+    [SOS-timer] Total time:                  64 ms
+samples/sample2.jpg
+    [SOS-timer] algo: reference
+    [SOS-timer] Loading Huffman Stream:      22 ms
+    [SOS-timer] Decoding Huffman Stream:     283 ms
+    [SOS-timer] Dequantize And Perform IDCT: 8685 ms
+    [SOS-timer] Convert YCbCr to RGB:        23 ms
+    [SOS-timer] Construct RGB image:         64 ms
+    [SOS-timer] Total time:                  9077 ms
+    [SOS-timer] algo: compound
+    [SOS-timer] Loading Huffman Stream:      20 ms
+    [SOS-timer] Decoding Huffman Stream:     282 ms
+    [SOS-timer] Dequantize And Perform IDCT: 1315 ms
+    [SOS-timer] Convert YCbCr to RGB:        22 ms
+    [SOS-timer] Construct RGB image:         66 ms
+    [SOS-timer] Total time:                  1705 ms
+    [SOS-timer] algo: walsh
+    [SOS-timer] Loading Huffman Stream:      20 ms
+    [SOS-timer] Decoding Huffman Stream:     270 ms
+    [SOS-timer] Dequantize And Perform IDCT: 561 ms
+    [SOS-timer] Convert YCbCr to RGB:        28 ms
+    [SOS-timer] Construct RGB image:         51 ms
+    [SOS-timer] Total time:                  930 ms
+    [SOS-timer] algo: reference-lut
+    [SOS-timer] Loading Huffman Stream:      20 ms
+    [SOS-timer] Decoding Huffman Stream:     279 ms
+    [SOS-timer] Dequantize And Perform IDCT: 45 ms
+    [SOS-timer] Convert YCbCr to RGB:        23 ms
+    [SOS-timer] Construct RGB image:         51 ms
+    [SOS-timer] Total time:                  418 ms
+    [SOS-timer] algo: compound-lut
+    [SOS-timer] Loading Huffman Stream:      20 ms
+    [SOS-timer] Decoding Huffman Stream:     273 ms
+    [SOS-timer] Dequantize And Perform IDCT: 31 ms
+    [SOS-timer] Convert YCbCr to RGB:        24 ms
+    [SOS-timer] Construct RGB image:         51 ms
+    [SOS-timer] Total time:                  399 ms
+    [SOS-timer] algo: arai
+    [SOS-timer] Loading Huffman Stream:      20 ms
+    [SOS-timer] Decoding Huffman Stream:     277 ms
+    [SOS-timer] Dequantize And Perform IDCT: 16 ms
+    [SOS-timer] Convert YCbCr to RGB:        24 ms
+    [SOS-timer] Construct RGB image:         54 ms
+    [SOS-timer] Total time:                  391 ms
+samples/sample3.jpg
+    [SOS-timer] algo: reference
+    [SOS-timer] Loading Huffman Stream:      57 ms
+    [SOS-timer] Decoding Huffman Stream:     857 ms
+    [SOS-timer] Dequantize And Perform IDCT: 34064 ms
+    [SOS-timer] Convert YCbCr to RGB:        75 ms
+    [SOS-timer] Construct RGB image:         266 ms
+    [SOS-timer] Total time:                  35319 ms
+    [SOS-timer] algo: compound
+    [SOS-timer] Loading Huffman Stream:      59 ms
+    [SOS-timer] Decoding Huffman Stream:     769 ms
+    [SOS-timer] Dequantize And Perform IDCT: 4515 ms
+    [SOS-timer] Convert YCbCr to RGB:        94 ms
+    [SOS-timer] Construct RGB image:         394 ms
+    [SOS-timer] Total time:                  5831 ms
+    [SOS-timer] algo: walsh
+    [SOS-timer] Loading Huffman Stream:      61 ms
+    [SOS-timer] Decoding Huffman Stream:     863 ms
+    [SOS-timer] Dequantize And Perform IDCT: 2128 ms
+    [SOS-timer] Convert YCbCr to RGB:        78 ms
+    [SOS-timer] Construct RGB image:         235 ms
+    [SOS-timer] Total time:                  3365 ms
+    [SOS-timer] algo: reference-lut
+    [SOS-timer] Loading Huffman Stream:      55 ms
+    [SOS-timer] Decoding Huffman Stream:     788 ms
+    [SOS-timer] Dequantize And Perform IDCT: 253 ms
+    [SOS-timer] Convert YCbCr to RGB:        104 ms
+    [SOS-timer] Construct RGB image:         308 ms
+    [SOS-timer] Total time:                  1508 ms
+    [SOS-timer] algo: compound-lut
+    [SOS-timer] Loading Huffman Stream:      56 ms
+    [SOS-timer] Decoding Huffman Stream:     883 ms
+    [SOS-timer] Dequantize And Perform IDCT: 74 ms
+    [SOS-timer] Convert YCbCr to RGB:        74 ms
+    [SOS-timer] Construct RGB image:         360 ms
+    [SOS-timer] Total time:                  1447 ms
+    [SOS-timer] algo: arai
+    [SOS-timer] Loading Huffman Stream:      61 ms
+    [SOS-timer] Decoding Huffman Stream:     779 ms
+    [SOS-timer] Dequantize And Perform IDCT: 74 ms
+    [SOS-timer] Convert YCbCr to RGB:        80 ms
+    [SOS-timer] Construct RGB image:         492 ms
+    [SOS-timer] Total time:                  1486 ms
